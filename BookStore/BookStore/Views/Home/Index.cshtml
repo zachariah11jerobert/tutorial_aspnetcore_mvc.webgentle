@@ -11,67 +11,33 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>This is the Home page of application</h1>
+    @for (int i = 0; i < 5; i++)
+    {
+        <h1>This is the Home page of application @i</h1>
+    }
+
+
+    <hr />
+
     @{
-        int a = 10;
-        int b = 0;
+        var list = new List<int>() { 1, 2, 3, 4, 5, 6 };
     }
 
-    <div>
-        <p> Value of a = @a</p>
-        <p> Value of b = @b</p>
-    </div>
-
-    <h1> Using If - elseif - else</h1>
-
-    @if (a > 5)
+    @foreach (var item in list)
     {
-        <h1>Hello from if block</h1>
-    }
-    else { 
-        <h1>Hello From Else Block</h1>
+        <h2>@item</h2>
     }
 
-    <div>----------------------------------------</div>
+    <hr />
+    <ul>
+        @{
+            var fruitList = new List<string>() { "Apple", "Mango", "Banana", "Grapes" };
 
-    @if (a > 5)
-    {
-        a++;
-
-        <h3>Hello from if block and value = @a</h3>
-
-    }
-    else if (a == 10)
-    {
-        <h2>Hello from else if block</h2>
-    }
-    else
-    {
-        <h1>Hello from else block</h1>
-    }
-
-    <h1>Ternary operation- () ? .... : .... </h1>
-    <h2>Ternary - @(a==10 ? b=10 : b=5)</h2>
-
-    <div>
-        <p> Value of a = @a</p>
-        <p> Value of b = @b</p>
-    </div>
-
-    <h1>Switch Case</h1>
-
-    @switch (a)
-    {
-        case 1:<h2>I am 1</h2>
-            break;
-        case 2:<h2>I am 2</h2>
-            break;
-        case 3:<h2>I am 3</h2>
-            break;
-        case 4:<h2>I am 4</h2>
-            break;
-        default:<h2>I am default</h2>
-            break;
-    }
+            foreach (var item in fruitList)
+            {
+                <li>@item</li>
+            }
+        }
+    </ul>
 </body>
 </html>
