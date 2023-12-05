@@ -9,35 +9,14 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/css/Site.css" rel="stylesheet" />
 </head>
 <body>
-    @for (int i = 0; i < 5; i++)
-    {
-        <h1>This is the Home page of application @i</h1>
-    }
 
-
-    <hr />
-
-    @{
-        var list = new List<int>() { 1, 2, 3, 4, 5, 6 };
-    }
-
-    @foreach (var item in list)
-    {
-        <h2>@item</h2>
-    }
-
-    <hr />
-    <ul>
-        @{
-            var fruitList = new List<string>() { "Apple", "Mango", "Banana", "Grapes" };
-
-            foreach (var item in fruitList)
-            {
-                <li>@item</li>
-            }
-        }
-    </ul>
+    <img src="~/images/logo.png" class="logo" alt="logo"/>
+    <img src="~/MyStaticFiles/dummy.png" alt="dummy"/>
+  
+    <h1>Welcome to book store Application</h1>
+    <p>This is the home page of our book store application</p>
 </body>
 </html>
