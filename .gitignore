@@ -10,3 +10,4 @@
 /BookStore/.vs/BookStore/DesignTimeBuild
 /BookStore/BookStore/BookStore.csproj.user
 /BookStore/BookStore/wwwroot/lib
+/BookStore/BookStore/bin/Release/netcoreapp3.1
