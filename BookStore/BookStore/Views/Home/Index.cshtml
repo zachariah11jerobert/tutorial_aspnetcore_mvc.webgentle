@@ -3,11 +3,99 @@
     Layout = "_Layout";
 }
 
+@section breadcrumb
+{
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Page 1</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Index</li>
+        </ol>
+    </nav>
+}
 
 
-<img src="~/images/logo.png" class="logo" alt="logo" />
 
-<h1 class="h1">Welcome to Home Page</h1>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome to Bookstore</h1>
+        <p class="lead text-muted">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque culpa debitis
+            accusantium saepe eos qui iure sed possimus amet ad provident totam veniam animi
+            odit ipsa dolorum tempore, eligendi laboriosam ipsum excepturi beatae quis,
+            consectetur voluptatem voluptatum! Omnis, asperiores.
+        </p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Search books</a>
+        </p>
+    </div>
+</section>
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <h3 class="h3">Top books</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"></svg>
+                    <div class="card-body">
+                        <h4 class="card-title">MVC</h4>
+                        <p class="card-text">This section will be used to display the short description of book</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-sm btn-outline-secondry">View details</a>
+                            </div>
+                            <small class="text-muted">Author name</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"></svg>
+                    <div class="card-body">
+                        <h4 class="card-title">MVC</h4>
+                        <p class="card-text">This section will be used to display the short description of book</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-sm btn-outline-secondry">View details</a>
+                            </div>
+                            <small class="text-muted">Author name</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"></svg>
+                    <div class="card-body">
+                        <h4 class="card-title">MVC</h4>
+                        <p class="card-text">This section will be used to display the short description of book</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-sm btn-outline-secondry">View details</a>
+                            </div>
+                            <small class="text-muted">Author name</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            alert("document is ready");
+        })
+    </script>
+}
 
 
 
