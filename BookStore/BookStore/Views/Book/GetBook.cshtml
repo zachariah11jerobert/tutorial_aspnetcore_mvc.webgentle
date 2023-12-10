@@ -40,7 +40,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6">
-                   <h2>@Model.Title</h2>
+                    <h2>@Model.Title</h2>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <hr/>
+            <hr />
 
             <ul class="list-group">
                 <li class="list-group-item"><span class="font-weight-bold">Category - </span>@Model.Category</li>
@@ -79,31 +79,35 @@
         </div>
     </div>
 
-</div>
+    <hr/>
+
+    <div class="py-5 bg-light">
+        <h3 class="h3">Similar book</h3>
+        <div class="row">
+            @for (int i = 0; i < 5; i++)
+            {
 
 
-<div class="py-5 bg-light">
-    <h3 class="h3">Similar book</h3>
-    <div class="row">
-        @for (int i = 0; i < 5; i++)
-        {
-
-
-        <div class="col-md-4">
-            <div class="card m-md-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"></svg>
-                <div class="card-body">
-                    <h2 class="card-title">book.Title</h2>
-                    <p class="card-text">book.Description</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <a href="#" class="btn btn-sm btn-outline-secondary">View details</a>
+                <div class="col-md-4">
+                    <div class="card m-md-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+                        <div class="card-body">
+                            <h2 class="card-title">book.Title</h2>
+                            <p class="card-text">book.Description</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View details</a>
+                                </div>
+                                <small class="text-muted">book.Author</small>
+                            </div>
                         </div>
-                        <small class="text-muted">book.Author</small>
                     </div>
                 </div>
-            </div>
+            }
         </div>
-        }
     </div>
+
 </div>
+
+
+
