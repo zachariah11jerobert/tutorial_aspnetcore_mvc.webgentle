@@ -1,14 +1,16 @@
-﻿
-@{ 
-    ViewData["Title"] = "Home";
-    var bookInfo = ViewData["book"] as BookModel;
+﻿@*@{
+        ViewData["Title"] = "Home";
+    }*@
+
+@{
+    var book = ViewData["Book"] as BookModel;
 }
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1>Welcome to Bookstore @ViewData["property1"]</h1>
+        <h1>Welcome to Bookstore @ViewData["CustomProperty"]</h1>
         <p>
-            Book Info : Id = @bookInfo.Id , Author = @bookInfo.Author     
+            Book Details : Id = @book.Id , Title = @book.Title
         </p>
         <p class="lead text-muted">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque culpa debitis
