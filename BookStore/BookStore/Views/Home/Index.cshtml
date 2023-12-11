@@ -1,21 +1,15 @@
 ﻿
-
-@section breadcrumb
-{
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Page 1</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Index</li>
-        </ol>
-    </nav>
+@{ 
+    ViewData["Title"] = "Home";
+    var bookInfo = ViewData["book"] as BookModel;
 }
-
-
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1>Welcome to Bookstore</h1>
+        <h1>Welcome to Bookstore @ViewData["property1"]</h1>
+        <p>
+            Book Info : Id = @bookInfo.Id , Author = @bookInfo.Author     
+        </p>
         <p class="lead text-muted">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque culpa debitis
             accusantium saepe eos qui iure sed possimus amet ad provident totam veniam animi

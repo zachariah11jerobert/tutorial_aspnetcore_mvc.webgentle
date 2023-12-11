@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStore.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace BookStore.Controllers
 
         public ViewResult Index()
         {
+            ViewData["property1"] = "Nitish Kaushik";
+            ViewData["book"] = new BookModel() { Author = "Nitish", Id = 1 };
             return View();
         }
 
