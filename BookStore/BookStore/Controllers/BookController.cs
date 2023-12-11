@@ -24,7 +24,10 @@ namespace BookStore.Controllers
 
         public ViewResult GetBook(int id)
         {
-            var data = _BookRepository.GetBookById(id);
+            dynamic data = new System.Dynamic.ExpandoObject();
+            data.book = _BookRepository.GetBookById(id);
+            data.Name = "Nithish";
+
             return View(data);
         }
 
