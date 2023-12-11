@@ -1,10 +1,7 @@
 ﻿using BookStore.Models;
 using BookStore.Repository;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.Controllers
 {
@@ -22,7 +19,8 @@ namespace BookStore.Controllers
             return View(data);
         }
 
-        public ViewResult GetBook(int id)
+        [Route("book-details/{id}",Name ="bookdetailsRoute")]
+        public ViewResult GetBook(int id,string nameOfBook)
         {
             dynamic data = new System.Dynamic.ExpandoObject();
             data.book = _BookRepository.GetBookById(id);
