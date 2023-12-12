@@ -1,11 +1,22 @@
 ﻿@model BookModel
 
-@{ 
+@{
     ViewData["Title"] = "Add New Book";
 }
 
 <div class="container">
     <h3 class="display-4">Add New Book</h3>
+    <hr />
+    @if (ViewBag.IsSuccess)
+    {
+        <div class="alert alert-success alert-dismissible" fade show role="alert">
+            <strong>Congratulations</strong> New Book Successfully Added <br />
+            Click <a asp-controller="Book" asp-action="GetBook" asp-route-id="@ViewBag.BookId">here</a> to view the details
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
     <form method="post" asp-action="AddNewBook" asp-controller="Book">
         <div class="form-group">
             <label asp-for="Title"></label>
