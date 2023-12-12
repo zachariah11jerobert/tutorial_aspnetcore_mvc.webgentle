@@ -1,30 +1,10 @@
-﻿@*@{
-        ViewData["Title"] = "Home";
-    }*@
+﻿@{
+    ViewData["Title"] = "Home";
+}
 
 <section class="jumbotron text-center">
     <div class="container">
         <h1>Welcome to Bookstore</h1>
-
-        <environment names="Development">
-            <h3>This is Development Environment : uses environment [names]</h3>
-        </environment>
-
-        <environment include="Development">
-            <h3>This is Development Environment : uses environment [include]</h3>
-        </environment>
-
-        <environment names="Production,Staging">
-            <h3>This is Production | Staging : uses environment [names]</h3>
-        </environment>
-
-        <environment include="Production,Staging">
-            <h3>This is Production | Staging : uses environment [includes]</h3>
-        </environment>
-
-        <environment exclude="Development">
-            <h3>This is Not Development Environment : uses environment [exclude]</h3>
-        </environment>
 
         <p class="lead text-muted">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque culpa debitis

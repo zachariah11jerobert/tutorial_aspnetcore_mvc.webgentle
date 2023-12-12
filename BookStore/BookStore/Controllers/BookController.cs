@@ -19,19 +19,28 @@ namespace BookStore.Controllers
             return View(data);
         }
 
-        [Route("book-details/{id}",Name ="bookdetailsRoute")]
-        public ViewResult GetBook(int id,string nameOfBook)
+        [Route("book-details/{id}", Name = "bookdetailsRoute")]
+        public ViewResult GetBook(int id)
         {
-            dynamic data = new System.Dynamic.ExpandoObject();
-            data.book = _BookRepository.GetBookById(id);
-            data.Name = "Nithish";
 
+            var data = _BookRepository.GetBookById(id);
             return View(data);
         }
 
         public List<BookModel> SearchBooks(string bookName, string authorName)
         {
             return _BookRepository.SearchBook(bookName, authorName);
+        }
+
+        public ViewResult AddNewBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult AddNewBook(BookModel bookModel)
+        {
+            return View();
         }
     }
 }
