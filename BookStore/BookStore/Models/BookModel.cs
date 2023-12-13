@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookStore.Models
 {
@@ -13,10 +14,14 @@ namespace BookStore.Models
         [StringLength(500, MinimumLength = 30)]
         public string Description { get; set; }
         public string Category { get; set; }
-        [Required(ErrorMessage ="Please choose the language of your book")]
+        [Required(ErrorMessage = "Please choose the language of your book")]
         public string Language { get; set; }
+
+        [Required(ErrorMessage = "Please choose the languages of your book")]
+        public List<string> MultiLanguage { get; set; }
+
         [Required(ErrorMessage = "Please enter the Total pages")]
-        [Display(Name ="Total pages of Book")]
+        [Display(Name = "Total pages of Book")]
         public int? TotalPages { get; set; }
 
     }
