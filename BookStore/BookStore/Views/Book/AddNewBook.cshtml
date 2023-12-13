@@ -24,9 +24,9 @@
             <label asp-for="Language" class="control-label"></label>
             <select asp-for="Language" class="form-control" required>
                 <option value="">Please Choose book Language</option>
-                <option>Hindi</option>
-                <option>English</option>
-                <option>Dutch</option>
+                <option value="Hindi">Hindi (One of the best language)</option>
+                <option value="English">English (Global Language)</option>
+                <option value="Dutch">Dutch (My Custom message)</option>
             </select>
             <span asp-validation-for="Language" class="text-danger"></span>
         </div>
