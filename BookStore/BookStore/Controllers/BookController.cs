@@ -1,6 +1,7 @@
 ﻿using BookStore.Models;
 using BookStore.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -35,16 +36,16 @@ namespace BookStore.Controllers
 
         public ViewResult AddNewBook(bool isSuccess = false, int bookId = 0)
         {
-            //var model = new BookModel()
-            //{
-            //    Language = "English"
-            //};
+            var model = new BookModel()
+            {
+                Language = "English"
+            };
 
-            ViewBag.Language = new List<string>() { "Hindi","English","Dutch"};
+            ViewBag.Language = new SelectList(new List<string>() { "Hindi", "English", "Dutch" });
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -73,12 +74,14 @@ namespace BookStore.Controllers
             }
             //ViewBag.IsSuccess = false;
             //ViewBag.BookId = 0;
-            ViewBag.Language = new List<string>() { "Hindi", "English", "Dutch" };
+            ViewBag.Language = new SelectList(new List<string>() { "Hindi", "English", "Dutch" });
 
             ModelState.AddModelError("", "This is my custom Error Message");
             ModelState.AddModelError("", "This is my second custom Error Message");
 
             return View();
         }
+
+       
     }
 }
