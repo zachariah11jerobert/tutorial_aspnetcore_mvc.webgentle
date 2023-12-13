@@ -38,10 +38,10 @@ namespace BookStore.Controllers
         {
             var model = new BookModel()
             {
-                Language = "English"
+                Language = "2"
             };
 
-            ViewBag.Language = new SelectList(new List<string>() { "Hindi", "English", "Dutch" });
+            ViewBag.Language = new SelectList(GetLanguage(), "Id", "Text");
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -74,14 +74,19 @@ namespace BookStore.Controllers
             }
             //ViewBag.IsSuccess = false;
             //ViewBag.BookId = 0;
-            ViewBag.Language = new SelectList(new List<string>() { "Hindi", "English", "Dutch" });
-
-            ModelState.AddModelError("", "This is my custom Error Message");
-            ModelState.AddModelError("", "This is my second custom Error Message");
+            ViewBag.Language = new SelectList(GetLanguage(), "Id", "Text");
 
             return View();
         }
 
-       
+        private List<LanguageModel> GetLanguage()
+        {
+            return new List<LanguageModel>()
+            {
+                new LanguageModel(){Id=1,Text="Hindi"},
+                new LanguageModel(){Id=2,Text="English"},
+                new LanguageModel(){Id=3,Text="Dutch"},
+            };
+        }
     }
 }
