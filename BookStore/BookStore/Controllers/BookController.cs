@@ -39,14 +39,16 @@ namespace BookStore.Controllers
         {
             var model = new BookModel()
             {
-                Language = "2"
+                //Language = "2"
             };
 
-            ViewBag.Language = GetLanguage().Select(x => new SelectListItem()
+            ViewBag.Language = new List<SelectListItem>()
             {
-                Text = x.Text,
-                Value = x.Id.ToString()
-            }).ToList();
+                new SelectListItem(){Text="Hindi",Value="1"},
+                new SelectListItem(){Text="English",Value="2",Disabled=true},
+                new SelectListItem(){Text="Dutch",Value="3",Selected=true},
+                new SelectListItem(){Text="Tamil",Value="4",Disabled=true},
+            };
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
