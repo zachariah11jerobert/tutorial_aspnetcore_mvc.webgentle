@@ -21,43 +21,36 @@
         <div asp-validation-summary="All" class="text-danger"></div>
 
         <div class="form-group">
-            <label asp-for="MyField"></label>
-            <input asp-for="MyField" class="form-control" />
-            <span asp-validation-for="MyField" class="text-danger"></span>
+            <label asp-for="Language" class="control-label"></label>
+            <select asp-for="Language" class="form-control" required>
+                <option value="">Please Choose book Language</option>
+                <option>Hindi</option>
+                <option>English</option>
+                <option>Dutch</option>
+            </select>
+            <span asp-validation-for="Language" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="MyPassword"></label>
-            <input asp-for="MyPassword" class="form-control" />
-            <span asp-validation-for="MyPassword" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="MyEmailAddress"></label>
-            <input asp-for="MyEmailAddress" class="form-control" />
-            <span asp-validation-for="MyEmailAddress" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Title"></label>
+            <label asp-for="Title" class="control-label"></label>
             <input asp-for="Title" class="form-control" />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="Author"></label>
+            <label asp-for="Author" class="control-label"></label>
             <input asp-for="Author" class="form-control" />
             <span asp-validation-for="Author" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="Description"></label>
+            <label asp-for="Description" class="control-label"></label>
             <textarea asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="TotalPages"></label>
+            <label asp-for="TotalPages" class="control-label"></label>
             <input asp-for="TotalPages" class="form-control" />
             <span asp-validation-for="TotalPages" class="text-danger"></span>
         </div>
