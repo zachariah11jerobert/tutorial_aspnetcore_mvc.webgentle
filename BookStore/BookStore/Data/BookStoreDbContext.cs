@@ -15,7 +15,7 @@ namespace BookStore.Data
 
         public DbSet<Book> Books { get; set; }
 
-        public DbSet<Language> Languages { get; set; }
+        public DbSet<Language> Language { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

@@ -49,20 +49,9 @@ namespace BookStore.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public IActionResult AddNewBook(BookModel bookModel)
-        {
-            int id = _bookRepository.AddNewBook(bookModel);
-            if (id > 0)
-            {
-                // return RedirectToAction("AddNewBook");
-                return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
-            }
-            return View();
-        }
 
         [HttpPost]
-        public async Task<IActionResult> AddNewBookAsync(BookModel bookModel)
+        public async Task<IActionResult> AddNewBook(BookModel bookModel)
         {
             if (ModelState.IsValid)
             {

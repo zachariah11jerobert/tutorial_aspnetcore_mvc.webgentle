@@ -18,7 +18,7 @@ namespace BookStore.Repository
 
         public async Task<List<LanguageModel>> GetLanguages()
         {
-            return await _bookStoreDbContext.Languages.Select(x => new LanguageModel()
+            return await _bookStoreDbContext.Language.Select(x => new LanguageModel()
             {
                 Id = x.Id,
                 Description = x.Description,

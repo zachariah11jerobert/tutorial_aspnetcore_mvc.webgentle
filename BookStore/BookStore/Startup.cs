@@ -16,7 +16,7 @@ namespace BookStore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BookStoreDbContext>(options => options.UseSqlServer("Server=.;Database=Db_BookStore_WebGentle;Integrted Security=True;"));
+            services.AddDbContext<BookStoreDbContext>(options => options.UseSqlServer("Server=.;Database=Db_BookStore_WebGentle;Integrated Security=True;"));
             services.AddControllersWithViews();
 #if DEBUG
             services.AddRazorPages().AddRazorRuntimeCompilation();

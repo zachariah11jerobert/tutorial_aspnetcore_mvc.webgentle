@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookStore.Data
 {
@@ -15,7 +16,6 @@ namespace BookStore.Data
         public DateTime? CreatedOn { get; set; }
 
         public DateTime? UpdatedOn { get; set; }
-
         public Language Language { get; set; }
     }
 }

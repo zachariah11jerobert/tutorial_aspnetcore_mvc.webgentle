@@ -72,7 +72,7 @@ namespace BookStore.Repository
                         Description = book.Description,
                         Id = book.Id,
                         LanguageId = book.LanguageId,
-                        Language = book.Language.Name,
+                        //Language = book.Language.Name,
                         Title = book.Title,
                         TotalPages = book.TotalPages
                     });
