@@ -42,27 +42,7 @@ namespace BookStore.Controllers
                 //Language = "2"
             };
 
-            ViewBag.Language = new List<SelectListItem>()
-            {
-                new SelectListItem(){Text="Hindi",Value="1"},
-                new SelectListItem(){Text="English",Value="2",Disabled=true},
-                new SelectListItem(){Text="Dutch",Value="3",Selected=true},
-                new SelectListItem(){Text="Tamil",Value="4",Disabled=true},
-            };
-
-            var group1 = new SelectListGroup() { Name = "Group 1" };
-            var group2 = new SelectListGroup() { Name = "Group 2", Disabled = true };
-            var group3 = new SelectListGroup() { Name = "Group 3" };
-
-            ViewBag.MultiLanguage = new List<SelectListItem>()
-            {
-                new SelectListItem(){Text="Hindi",Value="1",Group=group1},
-                new SelectListItem(){Text="English",Value="2",Group=group1},
-                new SelectListItem(){Text="Dutch",Value="3",Group=group2},
-                new SelectListItem(){Text="Tamil",Value="4",Group=group2},
-                new SelectListItem(){Text="Urdu",Value="5",Group=group3},
-                new SelectListItem(){Text="Chinese",Value="6",Group=group3},
-            };
+           
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -95,39 +75,11 @@ namespace BookStore.Controllers
             }
             //ViewBag.IsSuccess = false;
             //ViewBag.BookId = 0;
-            ViewBag.Language = new List<SelectListItem>()
-            {
-                new SelectListItem(){Text="Hindi",Value="1"},
-                new SelectListItem(){Text="English",Value="2",Disabled=true},
-                new SelectListItem(){Text="Dutch",Value="3",Selected=true},
-                new SelectListItem(){Text="Tamil",Value="4",Disabled=true},
-            };
-
-            var group1 = new SelectListGroup() { Name = "Group 1" };
-            var group2 = new SelectListGroup() { Name = "Group 2", Disabled = true };
-            var group3 = new SelectListGroup() { Name = "Group 3" };
-
-            ViewBag.MultiLanguage = new List<SelectListItem>()
-            {
-                new SelectListItem(){Text="Hindi",Value="1",Group=group1},
-                new SelectListItem(){Text="English",Value="2",Group=group1},
-                new SelectListItem(){Text="Dutch",Value="3",Group=group2},
-                new SelectListItem(){Text="Tamil",Value="4",Group=group2},
-                new SelectListItem(){Text="Urdu",Value="5",Group=group3},
-                new SelectListItem(){Text="Chinese",Value="6",Group=group3},
-            };
+          
 
             return View();
         }
 
-        private List<LanguageModel> GetLanguage()
-        {
-            return new List<LanguageModel>()
-            {
-                new LanguageModel(){Id=1,Text="Hindi"},
-                new LanguageModel(){Id=2,Text="English"},
-                new LanguageModel(){Id=3,Text="Dutch"},
-            };
-        }
+      
     }
 }

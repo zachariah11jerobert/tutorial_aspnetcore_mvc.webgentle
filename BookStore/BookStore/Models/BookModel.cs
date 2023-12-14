@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using BookStore.Enums;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookStore.Models
@@ -18,7 +19,7 @@ namespace BookStore.Models
         public string Language { get; set; }
 
         [Required(ErrorMessage = "Please choose the languages of your book")]
-        public List<string> MultiLanguage { get; set; }
+        public LanguageEnum LanguageEnum { get; set; }
 
         [Required(ErrorMessage = "Please enter the Total pages")]
         [Display(Name = "Total pages of Book")]
