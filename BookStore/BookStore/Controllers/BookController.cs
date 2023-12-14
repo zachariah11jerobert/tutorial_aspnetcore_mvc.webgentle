@@ -11,9 +11,11 @@ namespace BookStore.Controllers
     public class BookController : Controller
     {
         private readonly BookRepository _bookRepository = null;
-        public BookController(BookRepository bookRepository)
+        private readonly LanguageRepository _languageRepository = null;
+        public BookController(BookRepository bookRepository, LanguageRepository languageRepository)
         {
             _bookRepository = bookRepository;
+            _languageRepository = languageRepository;
         }
         public async Task<ViewResult> GetAllBooks()
         {
@@ -35,14 +37,12 @@ namespace BookStore.Controllers
             return _bookRepository.SearchBook(bookName, authorName);
         }
 
-        public ViewResult AddNewBook(bool isSuccess = false, int bookId = 0)
+        [HttpGet]
+        public async Task<ViewResult> AddNewBook(bool isSuccess = false, int bookId = 0)
         {
-            var model = new BookModel()
-            {
-                //Language = "2"
-            };
+            var model = new BookModel();
 
-           
+            ViewBag.Language = new SelectList( await _languageRepository.GetLanguages(),"Id","Name");
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -69,17 +69,15 @@ namespace BookStore.Controllers
                 int id = await _bookRepository.AddNewBookAsync(bookModel);
                 if (id > 0)
                 {
-                    // return RedirectToAction("AddNewBook");
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
             }
-            //ViewBag.IsSuccess = false;
-            //ViewBag.BookId = 0;
-          
+            ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+
 
             return View();
         }
 
-      
+
     }
 }

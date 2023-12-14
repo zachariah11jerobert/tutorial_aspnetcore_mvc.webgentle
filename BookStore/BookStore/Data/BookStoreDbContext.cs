@@ -15,6 +15,8 @@ namespace BookStore.Data
 
         public DbSet<Book> Books { get; set; }
 
+        public DbSet<Language> Languages { get; set; }
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer("Server=.;Database=Db_BookStore_WebGentle;Integrted Security=True;");
