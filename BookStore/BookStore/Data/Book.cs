@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookStore.Data
@@ -13,9 +14,13 @@ namespace BookStore.Data
         public int LanguageId { get; set; }
         public int TotalPages { get; set; }
         public string CoverImageUrl { get; set; }
+
+        public string BookPdfurl { get; set; }
         public DateTime? CreatedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
 
         public Language Language { get; set; }
+
+        public ICollection<BookGallery> bookGallery { get; set; }
     }
 }

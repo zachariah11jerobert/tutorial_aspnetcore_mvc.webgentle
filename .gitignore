@@ -11,3 +11,6 @@
 /BookStore/BookStore/BookStore.csproj.user
 /BookStore/BookStore/wwwroot/lib
 /BookStore/BookStore/bin/Release/netcoreapp3.1
+/BookStore/BookStore/wwwroot/books/gallery
+/BookStore/BookStore/wwwroot/books/cover
+/BookStore/BookStore/wwwroot/books/pdf
