@@ -31,6 +31,7 @@
           data-ajax-failure="myFailure"
           data-ajax-loading="#myLoader"
           asp-action="AddNewBook" asp-controller="Book">
+
         <div asp-validation-summary="All" class="text-danger"></div>
 
 
@@ -67,6 +68,15 @@
             <label asp-for="TotalPages" class="control-label"></label>
             <input asp-for="TotalPages" class="form-control" />
             <span asp-validation-for="TotalPages" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CoverPhoto" class="control-label"></label>
+            <div class="custom-file">
+                <input asp-for="CoverPhoto" class="custom-file-input" id="customFile" />
+                <label class="custom-file-label" for="customFile">Choose File</label>
+            </div>
+            <span asp-validation-for="CoverPhoto" class="text-danger"></span>
         </div>
 
         <div class="form-group">
