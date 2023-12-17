@@ -22,7 +22,13 @@
     <div class="container">
         <h3 class="h3">Top books</h3>
 
-        <vc:top-books></vc:top-books>
+        <hr />
+        <p>Method 1</p>
+        @await Component.InvokeAsync("TopBooks", new { count = 3 })
+
+        <hr />
+        <p>Method 2</p>
+        <vc:top-books count="3"></vc:top-books>
 
 
     </div>
