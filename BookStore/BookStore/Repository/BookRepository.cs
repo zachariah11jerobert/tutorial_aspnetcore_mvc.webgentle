@@ -49,7 +49,7 @@ namespace BookStore.Repository
                 TotalPages = model.TotalPages.HasValue ? model.TotalPages.Value : 0,
                 UpdatedOn = DateTime.UtcNow,
                 CoverImageUrl = model.CoverImageUrl,
-                BookPdfurl=model.BookPdfUrl
+                BookPdfurl = model.BookPdfUrl
             };
 
             newBook.bookGallery = new List<BookGallery>();
@@ -71,27 +71,36 @@ namespace BookStore.Repository
 
         public async Task<List<BookModel>> GetAllBooks()
         {
-            var books = new List<BookModel>();
-            var allBooks = await _bookStoreDbContext.Books.ToListAsync();
-            if (allBooks?.Any() == true)
-            {
-                foreach (var book in allBooks)
-                {
-                    books.Add(new BookModel()
+            return await _bookStoreDbContext.Books
+                     .Select(book => new BookModel()
+                     {
+                         Author = book.Author,
+                         Category = book.Category,
+                         Description = book.Description,
+                         Id = book.Id,
+                         LanguageId = book.LanguageId,
+                         Language = book.Language.Name,
+                         Title = book.Title,
+                         TotalPages = book.TotalPages,
+                         CoverImageUrl = book.CoverImageUrl
+                     }).ToListAsync();
+        }
+
+        public async Task<List<BookModel>> GetTopBooksAsync()
+        {
+            return await _bookStoreDbContext.Books
+                    .Select(book => new BookModel()
                     {
                         Author = book.Author,
                         Category = book.Category,
                         Description = book.Description,
                         Id = book.Id,
                         LanguageId = book.LanguageId,
-                        //Language = book.Language.Name,
+                        Language = book.Language.Name,
                         Title = book.Title,
                         TotalPages = book.TotalPages,
                         CoverImageUrl = book.CoverImageUrl
-                    });
-                }
-            }
-            return books;
+                    }).Take(5).ToListAsync();
         }
 
         public async Task<BookModel> GetBookById(int id)
