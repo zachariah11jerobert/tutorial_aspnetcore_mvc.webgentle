@@ -33,7 +33,7 @@ namespace BookStore.Controllers
             return View(data);
         }
 
-        [Route("book-details/{id}", Name = "bookdetailsRoute")]
+        [Route("book-details/{id:int:min(1)}", Name = "bookDetailsRoute")]
         public async Task<ViewResult> GetBook(int id)
         {
 

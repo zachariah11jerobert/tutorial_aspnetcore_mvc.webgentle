@@ -14,7 +14,8 @@ namespace BookStore.Controllers
             return View();
         }
 
-        public ViewResult AboutUs()
+        [Route("about-us/{name:alpha:minlength(5)}")]
+        public ViewResult AboutUs(string name)
         {
             return View();
         }
@@ -22,6 +23,25 @@ namespace BookStore.Controllers
         public ViewResult ContactUs()
         {
             return View();
+        }
+
+
+        [Route("test/a{a}")]
+        public string Test1(string a)
+        {
+            return a;
+        }
+
+        [Route("test/b{a}")]
+        public string Test2(string a)
+        {
+            return a;
+        }
+
+        [Route("test/c{a}")]
+        public string Test3(string a)
+        {
+            return a;
         }
     }
 }
