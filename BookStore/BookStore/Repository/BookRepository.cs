@@ -129,6 +129,9 @@ namespace BookStore.Repository
             return null;
         }
 
-
+        public string GetAppName()
+        {
+            return "Book store Application";
+        }
     }
 }
