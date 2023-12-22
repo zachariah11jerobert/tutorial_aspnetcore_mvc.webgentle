@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace BookStore.Repository
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         private readonly BookStoreDbContext _bookStoreDbContext = null;
         public BookRepository(BookStoreDbContext bookStoreDbContext)
         {
             _bookStoreDbContext = bookStoreDbContext;
         }
-
-        public object AddNew { get; internal set; }
 
         public int AddNewBook(BookModel model)
         {
