@@ -1,6 +1,7 @@
 ﻿using BookStore.Data;
 using BookStore.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,12 @@ namespace BookStore.Repository
     public class BookRepository : IBookRepository
     {
         private readonly BookStoreDbContext _bookStoreDbContext = null;
-        public BookRepository(BookStoreDbContext bookStoreDbContext)
+        private readonly IConfiguration _configuration;
+
+        public BookRepository(BookStoreDbContext bookStoreDbContext,IConfiguration configuration)
         {
             _bookStoreDbContext = bookStoreDbContext;
+            _configuration = configuration;
         }
 
         public int AddNewBook(BookModel model)
@@ -131,7 +135,7 @@ namespace BookStore.Repository
 
         public string GetAppName()
         {
-            return "Book store Application";
+            return _configuration["AppName"];
         }
     }
 }
