@@ -1,7 +1,8 @@
 ﻿@using Microsoft.Extensions.Configuration
 @inject IConfiguration _configuration
 @{
-    var newBookAlert = _configuration.GetSection("NewBookAlert");
+    var newBookAlert = new NewBookAlertConfig();
+    _configuration.Bind("NewBookAlert", newBookAlert);
 }
 
 <header>
@@ -42,19 +43,10 @@
         </div>
     </nav>
 
-    @if (_configuration.GetValue<bool>("NewBookAlert:DisplayNewBookAlert"))
+    @if (newBookAlert.DisplayNewBookAlert)
     {
-
         <div class="alert alert-info" role="alert">
-            @(_configuration.GetValue<string>("NewBookAlert:BookName"))
-        </div>
-    }
-
-    @if ((newBookAlert.GetValue<bool>("DisplayNewBookAlert")))
-    {
-
-        <div class="alert alert-info" role="alert">
-            @(newBookAlert.GetValue<string>("BookName"))
+            @newBookAlert.BookName
         </div>
     }
 </header>
