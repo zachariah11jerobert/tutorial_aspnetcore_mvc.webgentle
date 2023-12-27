@@ -1,24 +1,23 @@
 ﻿using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
-        public readonly IConfiguration _configuration;
+        public readonly NewBookAlertConfig _newBookAlertConfiguration;
 
-        public HomeController(IConfiguration configuration)
+        public HomeController(IOptions<NewBookAlertConfig> newBookAlertConfiguration)
         {
-            _configuration = configuration;
+            _newBookAlertConfiguration = newBookAlertConfiguration.Value;
         }
 
         public ViewResult Index()
         {
-            var newBookAlert = new NewBookAlertConfig();
-            _configuration.Bind("NewBookAlert", newBookAlert);
 
-            bool isDisplay = newBookAlert.DisplayNewBookAlert;
+            bool isDisplay = _newBookAlertConfiguration.DisplayNewBookAlert;
          
             return View();
         }
