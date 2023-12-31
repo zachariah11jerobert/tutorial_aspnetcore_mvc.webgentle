@@ -1,8 +1,9 @@
 ﻿@using Microsoft.Extensions.Configuration
 @inject IConfiguration _configuration
 @inject Microsoft.Extensions.Options.IOptionsSnapshot<NewBookAlertConfig> _newBookAlertConfiguration
-@{ 
-    var newBookAlertConfiguration = _newBookAlertConfiguration.Value;
+@{
+    var newBookAlertConfiguration = _newBookAlertConfiguration.Get("InternalBook");
+    var thirdPartyBookAlertConfiguration = _newBookAlertConfiguration.Get("ThirdPartyBook");
 }
 
 <header>
@@ -47,6 +48,13 @@
     {
         <div class="alert alert-info" role="alert">
             @newBookAlertConfiguration.BookName
+        </div>
+    }
+
+    @if (thirdPartyBookAlertConfiguration.DisplayNewBookAlert)
+    {
+        <div class="alert alert-info" role="alert">
+            @thirdPartyBookAlertConfiguration.BookName
         </div>
     }
 </header>
